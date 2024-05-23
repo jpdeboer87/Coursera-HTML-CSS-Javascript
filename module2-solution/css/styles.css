@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section {
+    border: 1px solid black;
+    padding: 45px 20px 20px 20px;
+    position: relative;
+    background-color: #e0f7fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section h2 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #00796b;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-top: 0px;
+    border-right: 0px;
+    margin: 0;
+}
+
+.section.chicken {
+    background-color: #ffeb3b;
+}
+
+.section.chicken h2 {
+    background-color: #f44336;
+}
+
+.section.beef {
+    background-color: #c8e6c9;
+}
+
+.section.beef h2 {
+    background-color: #8bc34a;
+}
+
+.section.sushi {
+    background-color: #bbdefb;
+}
+
+.section.sushi h2 {
+    background-color: #2196f3;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section:nth-child(3) {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
